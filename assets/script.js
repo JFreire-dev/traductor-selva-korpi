@@ -18,11 +18,16 @@ const dictionary = {
   ë: "ö",
   ä: "ï",
 };
+const copy = $("#copy");
 
 originalTextArea.on("input", () => {
   let originalText = originalTextArea.val();
   translatedTextArea.val(toSelvaKorpi(originalText));
 });
+
+copy.on("click",()=>{
+    copyToClipboard(translatedTextArea.val());
+})
 
 function toSelvaKorpi(text) {
   let translatedText = "";
@@ -37,4 +42,14 @@ function toSelvaKorpi(text) {
     translatedText += char;
   }
   return translatedText;
+}
+
+async function copyToClipboard(text){
+    try{
+        await navigator.clipboard.writeText(text);
+        alert("Text copied");
+        console.log('Text copied to clipboard successfully!');
+    } catch (err){
+        console.error('Failed to copy text: ', err);
+    }
 }
