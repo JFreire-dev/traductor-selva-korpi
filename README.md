@@ -16,21 +16,10 @@ The 'language' works more like a code cipher, where every letter on every word o
 
 **Practical case**
 
-Translate 'Hello world!' to SELVA KORPI.
+Translate 'Hello world!' to **SELVA KORPI**.
 
-H -> H **Not contained, left the same**
-e -> o
-l -> r
-l -> r
-o -> e
-
-w -> w **Not contained, left the same**
-o -> e
-r -> l
-l -> r
-d -> d 
-
-'Horre welrd!'
+H **E L L O**   W **O R L** D
+H **O R R E**   W **E L R** D
 
 
 
