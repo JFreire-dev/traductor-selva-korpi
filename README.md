@@ -18,8 +18,7 @@ The 'language' works more like a code cipher, where every letter on every word o
 
 Translate 'Hello world!' to **SELVA KORPI**.
 
-H **E L L O**   W **O R L** D
-H **O R R E**   W **E L R** D
+H **E L L O**   W **O R L** D turns into H **O R R E**   W **E L R** D
 
 
 
