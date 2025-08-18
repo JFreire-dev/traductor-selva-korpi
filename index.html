@@ -8,28 +8,43 @@
   </head>
   <body>
     <main>
+      <!-- Titulo página -->
       <article>
         <h1>Traductor Selva Korpi</h1>
       </article>
+      <!-- Cajas de traducción -->
       <section class="boxes">
-        <label for="original"><h2>Texto a traducir:</h2></label>
+        <label for="original"><h2>Texto Original</h2></label>
+        <!-- Caja input -->
         <textarea
           name="original"
           id="original-text"
           rows="20"
           cols="40"
-          placeholder="Ingresa el texto que deseas traducir a Selva Korpi."
+          placeholder="Ingresa el texto que deseas traducir hacia el Selva Korpi, o la frase en Selva Korpi que desees descifrar."
         ></textarea>
-        <label for="translated"><h2>Toxte on Korpi Selva:</h2></label>
+
+        <label for="translated"><h2>Texto Traducido:</h2></label>
+        <!-- Caja output -->
         <textarea
           name="translated"
           id="translated-text"
           rows="20"
           cols="40"
         ></textarea>
-        <button type="button" class="copy-button" id="copy">C o p y</button>
+
+        <!-- Boton copy -->
+        <section class="buttons">
+          <button type="button" class="button copy-button" id="copy">
+            C o p y
+          </button>
+          <button type="reset" class="button reset-button" id="reset">
+            R e s e t
+          </button>
+        </section>
       </section>
     </main>
+
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="

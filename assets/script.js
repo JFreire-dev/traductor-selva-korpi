@@ -1,5 +1,7 @@
+// **VARIABLES**
 const originalTextArea = $("#original-text");
 const translatedTextArea = $("#translated-text");
+const resetButton = $("#reset");
 const dictionary = {
   s: "k",
   e: "o",
@@ -11,24 +13,45 @@ const dictionary = {
   r: "l",
   p: "v",
   i: "a",
-  é: "ó",
+  // Tildes ´
   á: "í",
-  è: "ò",
+  é: "ó",
+  í: "á",
+  ó: "é",
+  // Tildes `
   à: "ì",
-  ë: "ö",
+  è: "ò",
+  ì: "à",
+  ò: "è",
+  // Tildes "
   ä: "ï",
+  ë: "ö",
+  ï: "ä",
+  ö: "ë",
 };
+// Copied text
 const copy = $("#copy");
 
+
+// **LISTENERS**
+// Translator
 originalTextArea.on("input", () => {
   let originalText = originalTextArea.val();
   translatedTextArea.val(toSelvaKorpi(originalText));
 });
 
-copy.on("click",()=>{
-    copyToClipboard(translatedTextArea.val());
+// Copy to clipboard
+copy.on("click", () => {
+  copyToClipboard(translatedTextArea.val());
+});
+
+// Reset text
+resetButton.on("click", () =>{
+  resetText();
 })
 
+
+// **FUNCTIONS**
 function toSelvaKorpi(text) {
   let translatedText = "";
   for (char of text) {
@@ -44,12 +67,17 @@ function toSelvaKorpi(text) {
   return translatedText;
 }
 
-async function copyToClipboard(text){
-    try{
-        await navigator.clipboard.writeText(text);
-        alert("Text copied");
-        console.log('Text copied to clipboard successfully!');
-    } catch (err){
-        console.error('Failed to copy text: ', err);
-    }
+function resetText() {
+  originalTextArea.val('');
+}
+
+// Copy API
+async function copyToClipboard(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+    alert("Text copied");
+    console.log("Text copied to clipboard successfully!");
+  } catch (err) {
+    console.error("Failed to copy text: ", err);
+  }
 }
